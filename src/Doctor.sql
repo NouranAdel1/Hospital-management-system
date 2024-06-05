@@ -1,0 +1,8 @@
+CREATE TABLE Doctor (
+  Doctor_ID INT PRIMARY KEY,
+  Name VARCHAR(255) NOT NULL,
+  Specialty VARCHAR(255) NOT NULL,
+  Phone_number VARCHAR(20) NOT NULL,
+  Email VARCHAR(255) NOT NULL,
+  Gender VARCHAR(10) NOT NULL
+);
