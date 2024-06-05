@@ -36,17 +36,28 @@ The Hospital Management System (HMS) is designed to streamline various aspects o
 6. `Inserts.sql` :This script contains sample data insertions into the `Patient`, `Doctor`, `Insurance`, and `Medical_Record` tables to populate the database with initial data.
 7. `Selects.sql`: Select Queries
 
-### User Registration Page
-![image](https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/974d1e05-f81d-47f3-a552-c2128c166a21)
+### Login Page
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/760007cf-d72e-4580-ac50-f5bc08fedee8" width="500">
 
-### Patient Management Interface
-![Patient Management](./images/extracted_image_1.jpeg)
+### Registration Page
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/ed5f1487-b219-4a5d-b94b-34073d7cff91" width="500">
+
+### DR, Admin & Patient Registration Interface
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/7f9bf7ba-7ec7-4309-b300-96bee1a429a7" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/e7250397-db39-4524-a5da-425d85314364" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/a13a6218-f52b-4e95-b443-3a8e6b485a72" width="500">
+
+### Admin, Patient and Doctor Management Interface
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/5f50782a-cb79-4018-83be-50f0f1fdd043" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/d8857ab3-4baa-4ffb-8baa-18de24e0108c" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/7da90de3-bae6-4615-a945-ecd539a6ace2" width="500">
+
+### DR & Patient personal Interface
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/eb603235-1267-4b25-91da-64a65ec58d35" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/c80eac34-88ac-4039-9348-f584c65c2d7a" width="500">
 
 ### Appointment Scheduling Interface
-![Appointment Scheduling](./images/extracted_image_2.jpeg)
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/5ddf402d-a006-4eab-bd5d-a0b3502b3e03" width="500">
 
-### Medical Inventory Management
-![Medical Inventory](./images/extracted_image_3.png)
 
-### Billing Interface
-![Billing](./images/extracted_image_4.png)
+
