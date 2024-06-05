@@ -27,3 +27,26 @@ The Hospital Management System (HMS) is designed to streamline various aspects o
   - Compliance with governmental healthcare regulations.
   - Easy maintainability and scalability.
 
+
+1. `Patient.sql`: This script creates the `Patient` table, which stores detailed information about each patient including their ID, name, gender, birthdate, insurance ID, phone number, address, and associated doctor ID.
+2. `Doctor.sql`:This script creates the `Doctor` table, which contains details about each doctor such as their ID, name, specialty, phone number, email, and gender.
+3. `Medical_Record.sql`:This script sets up the `Medical_Record` table, which tracks each patient's medical records, including record ID, patient ID, doctor ID, treatment, date, and diagnosis.
+4. `Insurance.sql`:This script creates the `Insurance` table, which stores insurance details such as insurance ID, name, email, and address.
+5. `Triggers.sql`:This script defines triggers for the database. For example, it includes a trigger to monitor changes (inserts and deletes) in the `Doctor` table.
+6. `Inserts.sql` :This script contains sample data insertions into the `Patient`, `Doctor`, `Insurance`, and `Medical_Record` tables to populate the database with initial data.
+7. `Selects.sql`: Select Queries
+
+### User Registration Page
+![User Registration](./images/extracted_image_0.png)
+
+### Patient Management Interface
+![Patient Management](./images/extracted_image_1.jpeg)
+
+### Appointment Scheduling Interface
+![Appointment Scheduling](./images/extracted_image_2.jpeg)
+
+### Medical Inventory Management
+![Medical Inventory](./images/extracted_image_3.png)
+
+### Billing Interface
+![Billing](./images/extracted_image_4.png)
