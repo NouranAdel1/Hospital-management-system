@@ -43,9 +43,9 @@ The Hospital Management System (HMS) is designed to streamline various aspects o
 <img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/ed5f1487-b219-4a5d-b94b-34073d7cff91" width="500">
 
 ### DR, Admin & Patient Registration Interface
-<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/7f9bf7ba-7ec7-4309-b300-96bee1a429a7" width="500">
-<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/e7250397-db39-4524-a5da-425d85314364" width="500">
-<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/a13a6218-f52b-4e95-b443-3a8e6b485a72" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/60985bec-cc2b-400b-a341-be7bb87ff591" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/ede40729-cdb5-46c0-aade-0525189a2bce" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/cc8b1be9-69f7-492a-9ddb-f6053571fe12" width="500">
 
 ### Admin, Patient and Doctor Management Interface
 <img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/5f50782a-cb79-4018-83be-50f0f1fdd043" width="500">
