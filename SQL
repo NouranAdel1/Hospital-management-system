@@ -1,0 +1,169 @@
+-- Create Patient table
+CREATE TABLE Patient (
+  Patient_ID INT PRIMARY KEY,
+  Name VARCHAR(255) NOT NULL,
+  Gender VARCHAR(10) NOT NULL,
+  Birthdate DATE NOT NULL,
+  Insurance_ID INT NOT NULL,
+  Phone VARCHAR(20) NOT NULL,
+  Address VARCHAR(255) NOT NULL,
+  Doctor_ID INT NOT NULL
+);
+
+-- Create Doctor table
+CREATE TABLE Doctor (
+  Doctor_ID INT PRIMARY KEY,
+  Name VARCHAR(255) NOT NULL,
+  Specialty VARCHAR(255) NOT NULL,
+  Phone_number VARCHAR(20) NOT NULL,
+  Email VARCHAR(255) NOT NULL,
+  Gender VARCHAR(10) NOT NULL
+);
+
+-- Create Medical_Record table
+CREATE TABLE Medical_Record (
+  Record_ID INT PRIMARY KEY,
+  Patient_ID INT NOT NULL,
+  Doctor_ID INT NOT NULL,
+  Treatment VARCHAR(255) NOT NULL,
+  Date DATE NOT NULL,
+  Diagnosis VARCHAR(255) NOT NULL
+);
+
+-- Create Insurance table
+CREATE TABLE Insurance (
+  Insurance_ID INT PRIMARY KEY,
+  Name VARCHAR(255) NOT NULL,
+  Email VARCHAR(255) NOT NULL,
+  Address VARCHAR(255) NOT NULL
+);
+
+-- Create trigger on Doctor table
+CREATE TRIGGER DoctorChangeTrigger
+ON Doctor
+AFTER INSERT, DELETE
+AS
+BEGIN
+  IF EXISTS (SELECT * FROM inserted)
+  BEGIN
+    PRINT 'A new record has been inserted into the Doctor table.'
+  END
+
+  IF EXISTS (SELECT * FROM deleted)
+  BEGIN
+    PRINT 'A record has been deleted from the Doctor table.'
+  END
+END;
+
+-- Insert data into Patient table
+INSERT INTO Patient (Patient_ID, Name, Gender, Birthdate, Insurance_ID, Phone, Address, Doctor_ID)
+VALUES 
+  (10001, 'Bastweesy Mohamed', 'Male', '2000-07-14', 12345679, '+1-555-123456', '789 Maple Ave, Anytown, USA', 20001),
+  (10002, 'Effat Elsherbiny Niazi', 'Female', '2003-07-30', 56179621, '+1-555-789012', '456 Oak St, Anytown, USA', 20003),
+  (10003, 'Zayn Malik', 'Male', '2002-01-01', 20729711, '+1-555-345678', '123 Main St, Anytown, USA', 20003),
+  (10004, 'Warda Gunina', 'Female', '2002-05-07', 21567891, '+1-555-901234', '178 Ramses St, Cairo, Egypt', 20004);
+
+-- Insert data into Doctor table
+INSERT INTO Doctor (Doctor_ID, Name, Specialty, Phone_number, Email, Gender)
+VALUES 
+  (20001, 'Dr. Smith', 'Cardiology', '+1-555-123456', 'john.smith@hospital.com', 'Male'),
+  (20002, 'Dr. Doe', 'Pediatrics', '+1-555-789012', 'jane.doe@hospital.com', 'Female'),
+  (20003, 'Dr. Johnson', 'Oncology', '+1-555-345678', 'alex.johnson@hospital.com', 'Male'),
+  (20004, 'Dr. Lee', 'Physical Therapy', '+1-555-901234', 'sarah.lee@hospital.com', 'Female');
+
+-- Insert data into Insurance table
+INSERT INTO Insurance (Insurance_ID, Name, Email, Address)
+VALUES 
+  (12345679, 'Oscar Health', 'OscarHealth@Bue.edu.eg', '123 Main St, Anytown, USA'),
+  (56179621, 'Medica', 'Medica@outlook.com', '456 Elm St, Anytown, USA'),
+  (20729711, 'Humana', 'humana@gmail.com', '789 Oak St, Anytown, USA'),
+  (21567891, 'Cigna', 'cigna@gmail.com', '321 Maple St, Anytown, USA');
+
+-- Insert data into Medical_Record table
+INSERT INTO Medical_Record (Record_ID, Patient_ID, Doctor_ID, Treatment, Date, Diagnosis)
+VALUES
+  (202208, 10001, 20001, 'Prescribed Meds', '2023-07-20', 'Diabetes'),
+  (202105, 10002, 20003, 'Rest and fluids', '2022-01-10', 'Migraine headache'),
+  (202011, 10003, 20003, 'Prescribed Meds', '2023-03-10', 'High blood pressure'),
+  (202301, 10004, 20004, 'Physical Therapy', '2023-05-01', 'Strained Ankle');
+
+-- Queries
+
+-- Select patients with Humana insurance
+SELECT * 
+FROM Patient 
+WHERE Insurance_ID = (
+  SELECT Insurance_ID 
+  FROM Insurance 
+  WHERE Name = 'Humana'
+);
+
+-- Count medical records per patient
+SELECT Patient.Name, COUNT(*) AS Total_Medical_Records
+FROM Patient
+JOIN Medical_Record ON Patient.Patient_ID = Medical_Record.Patient_ID
+GROUP BY Patient.Name;
+
+-- Count patients per doctor
+SELECT Doctor.Name AS DoctorName, COUNT(*) AS PatientCount
+FROM Patient
+JOIN Doctor ON Patient.Doctor_ID = Doctor.Doctor_ID
+GROUP BY Doctor.Name;
+
+-- Select patients with no medical records
+SELECT * 
+FROM Patient p
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM Medical_Record m
+  WHERE m.Patient_ID = p.Patient_ID
+);
+
+-- Select patients with name containing 'Zayn'
+SELECT * 
+FROM Patient 
+WHERE Name LIKE '%Zayn%';
+
+-- Select doctors with no records in Physical Therapy specialty
+SELECT D.Name 
+FROM Doctor D
+LEFT JOIN Medical_Record M ON D.Doctor_ID = M.Doctor_ID
+WHERE D.Specialty = 'Physical Therapy' AND M.Record_ID IS NULL;
+
+-- Calculate average age of patients
+SELECT AVG(DATEDIFF(YEAR, Birthdate, GETDATE())) AS Average_Age 
+FROM Patient;
+
+-- Count medical records per patient (alternative query)
+SELECT P.Name, COUNT(M.Record_ID) AS Total_Medical_Records
+FROM Patient P 
+LEFT JOIN Medical_Record M ON P.Patient_ID = M.Patient_ID 
+GROUP BY P.Name;
+
+-- Select records for a specific doctor, insurance, and date range
+SELECT MR.Record_ID, MR.Patient_ID
+
+, MR.Treatment, MR.Date, MR.Diagnosis 
+FROM Medical_Record MR 
+INNER JOIN Patient P ON MR.Patient_ID = P.Patient_ID 
+INNER JOIN Insurance I ON P.Insurance_ID = I.Insurance_ID 
+WHERE MR.Doctor_ID = 20003 
+AND MR.Date BETWEEN '2022-01-01' AND '2023-12-31' 
+AND I.Name = 'Humana';
+
+-- Select patients with 'High Blood Pressure' diagnosis and their insurance details
+SELECT P.Patient_ID, P.Insurance_ID, I.Name, M.Treatment 
+FROM Patient P 
+JOIN Medical_Record M ON P.Patient_ID = M.Patient_ID 
+JOIN Insurance I ON P.Insurance_ID = I.Insurance_ID 
+WHERE M.Diagnosis = 'High Blood Pressure';
+
+-- Select doctors based on user-input specialty
+SELECT * 
+FROM Doctor 
+WHERE Specialty = 'user_input';
+
+-- Select patients based on user-input gender
+SELECT Name 
+FROM Patient 
+WHERE Gender = 'user_input';
