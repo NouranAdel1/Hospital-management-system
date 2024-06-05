@@ -1,0 +1,10 @@
+CREATE TABLE Patient (
+  Patient_ID INT PRIMARY KEY,
+  Name VARCHAR(255) NOT NULL,
+  Gender VARCHAR(10) NOT NULL,
+  Birthdate DATE NOT NULL,
+  Insurance_ID INT NOT NULL,
+  Phone VARCHAR(20) NOT NULL,
+  Address VARCHAR(255) NOT NULL, 
+  Doctor_ID INT NOT NULL
+);
