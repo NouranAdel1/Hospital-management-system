@@ -37,7 +37,7 @@ The Hospital Management System (HMS) is designed to streamline various aspects o
 7. `Selects.sql`: Select Queries
 
 ### User Registration Page
-![User Registration](./images/extracted_image_0.png)
+![image](https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/974d1e05-f81d-47f3-a552-c2128c166a21)
 
 ### Patient Management Interface
 ![Patient Management](./images/extracted_image_1.jpeg)
