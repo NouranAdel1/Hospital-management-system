@@ -42,17 +42,24 @@ The Hospital Management System (HMS) is designed to streamline various aspects o
 ### Registration Page
 <img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/4e482b6c-ce2c-47de-91a2-565ee5de5999" width="500">
 
-### Interface of DR & Patient manegement  
+### Dr, Patient, and admin Registration form
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/d7cfb980-4165-4a72-ae92-bf2087f22ee4" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/8667ce8e-4349-4a3e-bbd7-c47c1eff3d99" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/dce21f0e-d76c-4f6d-b0a0-bb624ec08024" width="500">
+
+
+### Ammin form and Interface of DR & Patient management  
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/8bf68abc-539a-41be-836f-765f408ac8f8" width="500">
 <img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/0fa12dcb-b8cd-4b89-ab4b-b14239865140" width="500">
 <img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/6065ed87-b90c-47f4-8650-9cf784c06c8e" width="500">
 
 
-### DR & Patient personal Interface
-<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/66ac951d-62f0-401a-8aeb-3057bc1259cb" width="500">
-<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/e274a80a-2151-46f1-a8f3-7e40b6d5d4b9" width="500">
+### DR & Patient Personal Interface
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/9516b951-0bfd-42b7-b0ca-a261188481e3" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/1475a0c4-e2df-4ab6-a35e-4abde34e75db" width="500">
 
 ### Appointment Scheduling Interface
-<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/5ddf402d-a006-4eab-bd5d-a0b3502b3e03" width="500">
+<img src="https://github.com/NouranAdel1/Hospital-management-system/assets/129008133/4c64d72d-d558-4e60-ac0a-b3c79d45b1c1" width="500">
 
 
 
