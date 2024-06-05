@@ -61,3 +61,13 @@ FROM Patient P
 JOIN Medical_Record M ON P.Patient_ID = M.Patient_ID 
 JOIN Insurance I ON P.Insurance_ID = I.Insurance_ID 
 WHERE M.Diagnosis = 'High Blood Pressure';
+
+-- Select doctors based on user-input specialty
+SELECT * 
+FROM Doctor 
+WHERE Specialty = 'user_input';
+
+-- Select patients based on user-input gender
+SELECT Name 
+FROM Patient 
+WHERE Gender = 'user_input';
